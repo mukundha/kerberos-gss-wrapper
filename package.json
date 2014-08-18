@@ -1,0 +1,25 @@
+{
+  "name": "kerberos-gss-wrapper",
+  "version": "0.0.1",
+  "description": "A Node wrapper for Java GSS API",
+  "main": "kerberos.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mukundha/kerberos-gss-wrapper.git"
+  },
+  "keywords": [
+    "kerberos",
+    "gss",
+    "credential",
+    "delegation"
+  ],
+  "author": "Mukundha Madhavan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukundha/kerberos-gss-wrapper/issues"
+  },
+  "homepage": "https://github.com/mukundha/kerberos-gss-wrapper"
+}
