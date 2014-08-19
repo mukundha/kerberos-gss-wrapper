@@ -16,7 +16,7 @@ util.inherits(Strategy, passport.Strategy);
 Strategy.prototype.authenticate = function(req, options) {
   options = options || {};
   
-  var authHeader = req.getHeader('Authorization');
+  var authHeader = req.headers.authorization;
 
   if (!authHeader ) {
     return this.fail({ message: options.badRequestMessage || 'Missing Authorization header' }, 400);
