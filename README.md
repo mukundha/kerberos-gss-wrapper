@@ -7,7 +7,7 @@ A Node wrapper for Java GSS API. This is a low level API to perform
 2. Generate a Kerberos Authorization Header
 3. Perform Kerberos Credential Delegation
 
-This can also be used as strategy with Passportjs[https://github.com/jaredhanson/passport]
+This can also be used as strategy with [Passportjs](https://github.com/jaredhanson/passport)
 
 ### Install
 
