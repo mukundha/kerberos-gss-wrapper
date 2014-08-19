@@ -1,5 +1,6 @@
 var java = require('java');
 var path = require('path');
+var Strategy = require('./strategy');
 
 var fileName = path.join (__dirname, './lib/kerberos.jar');
 java.classpath.push(fileName);
@@ -20,6 +21,5 @@ exports.createAuthHeader = function  (loginModule, userName, serverName) {
 	return token ;
 }
 
-
-
-
+exports = module.exports = Strategy;
+exports.Strategy = Strategy;
