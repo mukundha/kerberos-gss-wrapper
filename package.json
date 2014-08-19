@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git@github.com:mukundha/kerberos-gss-wrapper.git"
   },
+  "dependencies" : {
+    "java" : "*"
+  },
   "keywords": [
     "kerberos",
     "gss",
