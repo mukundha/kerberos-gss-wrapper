@@ -58,17 +58,31 @@ Sample krb5.conf
 
 ```
 var krb = require('kerberos-gss-wrapper');
+```
 
-//For Kerberos token validation
-var userName = krb.verifyAuthHeader(loginModuleName, authorizationHeader) ;
+For Kerberos token validation
+```
+//authorizationHeader will be of the form 'Negotiate <base64 encoded kerberos ticket>'
+var userName = krb.verifyAuthHeader(loginModuleName, req.getHeader('Authorization')) ;
 
-//For Southbound authentication,
-var authHeader = krb.createAuthHeader ( loginModuleName , principalName, servicePrincipalNameofServer ) ;
+```
+
+For Southbound authentication,
+```
+var authHeader = krb.createAuthHeader ( loginModuleName , 
+										principalName, 
+										servicePrincipalNameofServer ) ;
 authHeader = 'Negotiate ' + authHeader ;
-req.setHeder('Authorization' , authHeader);
+req.setHeader('Authorization' , authHeader);
+```
 
-//For Kerberos Credential Delegation
-var newAuthHeader = krb.delegateCreds (loginModuleName , authHeader , servicePrincipalNameofServer );
+For Kerberos Credential Delegation
+```
+var newAuthHeader = krb.delegateCreds (loginModuleName , 
+									authHeader , 
+									servicePrincipalNameofServer );
+newAuthHeader = 'Negotiate ' + newAuthHeader ;
+req.setHeader('Authorization' , newAuthHeader );									
 
 ```
 
