@@ -3,8 +3,7 @@ kerberos-gss-wrapper
 
 A Node wrapper for Java GSS API 
 
-Install
-=======
+### Install
 
 ```
 npm install kerberos-gss-wrapper
@@ -48,8 +47,8 @@ Sample krb5.conf
 	.APIGEE.LOCAL = APIGEE.LOCAL 
 ```
 
-Usage
-=====
+### Usage
+
 
 ```
 var krb = require('kerberos-gss-wrapper');
@@ -67,8 +66,8 @@ var newAuthHeader = krb.delegateCreds (loginModuleName , authHeader , servicePri
 
 ```
 
-TODO
-====
+### TODO
+
 
 1. Create a Passport Strategy for this module
 2. Support Kerberos Constrained Delegation
