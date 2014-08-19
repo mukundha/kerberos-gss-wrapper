@@ -60,14 +60,14 @@ Sample krb5.conf
 var krb = require('kerberos-gss-wrapper');
 ```
 
-For Kerberos token validation
+####### Validate Kerberos Token
 ```
-//authorizationHeader will be of the form 'Negotiate <base64 encoded kerberos ticket>'
+//authorizationHeader will be of the form 'Negotiate <base64 encoded kerberos token>'
 var userName = krb.verifyAuthHeader(loginModuleName, req.getHeader('Authorization')) ;
 
 ```
 
-For Southbound authentication,
+####### Generate Kerberos Token,
 ```
 var authHeader = krb.createAuthHeader ( loginModuleName , 
 										principalName, 
@@ -76,10 +76,10 @@ authHeader = 'Negotiate ' + authHeader ;
 req.setHeader('Authorization' , authHeader);
 ```
 
-For Kerberos Credential Delegation
+####### Kerberos Credential Delegation
 ```
 var newAuthHeader = krb.delegateCreds (loginModuleName , 
-									authHeader , 
+									req.getHeader('Authorization') , 
 									servicePrincipalNameofServer );
 newAuthHeader = 'Negotiate ' + newAuthHeader ;
 req.setHeader('Authorization' , newAuthHeader );									
