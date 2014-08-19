@@ -1,8 +1,8 @@
 var java = require('java');
+var path = require('path');
 
-//FIX IT!!, 
-var path = require('fs').realpathSync('.') + '/node_modules/kerberos-gss-wrapper/lib/kerberos.jar';
-java.classpath.push(path);
+var fileName = path.join (__dirname, './lib/kerberos.jar');
+java.classpath.push(fileName);
 
 
 exports.verifyAuthHeader = function ( loginModule , header) {
