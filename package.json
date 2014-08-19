@@ -11,7 +11,9 @@
     "url": "git@github.com:mukundha/kerberos-gss-wrapper.git"
   },
   "dependencies" : {
-    "java" : "*"
+    "java" : "*",
+    "passport-strategy": "*",
+    "util" : "*"
   },
   "keywords": [
     "kerberos",

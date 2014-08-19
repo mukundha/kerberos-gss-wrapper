@@ -20,6 +20,4 @@ exports.createAuthHeader = function  (loginModule, userName, serverName) {
 	var token = java.callStaticMethodSync ("node.security.kerberos.Kerberos" , "createAuthHeader" , loginModule , userName , serverName);
 	return token ;
 }
-
-exports = module.exports = Strategy;
 exports.Strategy = Strategy;

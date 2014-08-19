@@ -2,11 +2,7 @@ var passport = require('passport-strategy');
 var krb = require('kerberos-gss-wrapper');
 var util = require('util');
 
-function Strategy(options, verify) {
-  if (typeof options == 'function') {
-    verify = options;
-    options = {};
-  }
+function Strategy(options) {
   
   this._loginModule = options.loginModule ;
   
@@ -30,10 +26,7 @@ Strategy.prototype.authenticate = function(req, options) {
   
   try {
   	var username = krb.verifyAuthHeader(this._loginModule, authHeader);
-  	if(!username) {
-  		self.fail('auth failed');
-  	}
-	self.success(username, info);
+	self.success(username);
   } catch (ex) {
     return self.error(ex);
   }
