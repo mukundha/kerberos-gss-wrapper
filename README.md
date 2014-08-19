@@ -1,11 +1,11 @@
 kerberos-gss-wrapper
 ====================
 
-A Node wrapper for Java GSS API.
-This is a low level API to perform 
-	1. Verify Kerberos Authorization Header
-	2. Generate a Kerberos Authorization Header
-	3. Perform Kerberos Credential Delegation
+A Node wrapper for Java GSS API. This is a low level API to perform 
+
+1. Verify Kerberos Authorization Header
+2. Generate a Kerberos Authorization Header
+3. Perform Kerberos Credential Delegation
 
 
 ### Install
