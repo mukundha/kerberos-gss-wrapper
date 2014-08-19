@@ -7,6 +7,7 @@ A Node wrapper for Java GSS API. This is a low level API to perform
 2. Generate a Kerberos Authorization Header
 3. Perform Kerberos Credential Delegation
 
+This can also be used as strategy with Passportjs[https://github.com/jaredhanson/passport]
 
 ### Install
 
@@ -86,7 +87,35 @@ req.setHeader('Authorization' , newAuthHeader );
 
 ```
 
+####### Passport Strategy
+
+```
+var krb = require('kerberos-gss-wrapper').Strategy;
+var passport = require('passport');
+var express = require('express');
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(id, done) {
+  done(null, id);
+});
+
+passport.use(new krb({loginModule: 'ServicePrincipalLoginContext'})) ;
+
+var app = new express () ;
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/token' , passport.authenticate('kerberos-gss') , function(req,res){
+	res.end('Success ' + req.user) ;
+});
+
+app.listen(3000);
+```
+
 ### TODO
 
-1. Create a Passport Strategy for this module
-2. Support Kerberos Constrained Delegation
+1. Support Kerberos Constrained Delegation
