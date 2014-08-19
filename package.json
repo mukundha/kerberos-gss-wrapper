@@ -1,6 +1,6 @@
 {
   "name": "kerberos-gss-wrapper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A Node wrapper for Java GSS API",
   "main": "kerberos.js",
   "scripts": {
