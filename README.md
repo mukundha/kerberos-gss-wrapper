@@ -1,16 +1,22 @@
 kerberos-gss-wrapper
 ====================
 
-A Node wrapper for Java GSS API 
+A Node wrapper for Java GSS API.
+This is a low level API to perform 
+	1. Verify Kerberos Authorization Header
+	2. Generate a Kerberos Authorization Header
+	3. Perform Kerberos Credential Delegation
+
 
 ### Install
 
 ```
 npm install kerberos-gss-wrapper
-
 ```
 
-Add login.conf, krb5.conf files to your application
+### Setup
+
+Add ```login.conf```, ```krb5.conf``` files to your application
 
 Sample login.conf
 
@@ -25,7 +31,7 @@ ServicePrincipalLoginContext
       useKeyTab=true
       storeKey=true
       debug=true;      
-};
+}
 ```
 
 Sample krb5.conf
@@ -67,7 +73,6 @@ var newAuthHeader = krb.delegateCreds (loginModuleName , authHeader , servicePri
 ```
 
 ### TODO
-
 
 1. Create a Passport Strategy for this module
 2. Support Kerberos Constrained Delegation
